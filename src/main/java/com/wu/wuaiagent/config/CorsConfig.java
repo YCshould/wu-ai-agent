@@ -6,6 +6,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
  * 全局跨域配置
+ * MVC 核心配置（拦截器、视图解析等）
+ * WebMvcConfigurer接口提供了 回调方法 机制，这些方法不需要使用 @Bean标注
+ * 不能被注入，在启动时一次性配置
  */
 @Configuration
 public class CorsConfig implements WebMvcConfigurer {
