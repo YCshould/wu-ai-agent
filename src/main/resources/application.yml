@@ -8,11 +8,27 @@ spring:
       base-url: http://localhost:11434
       chat:
         model: gemma3:1b
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/yu-ai-agent
-    username: root
-    password: 20010518
+    vectorstore:
+      pgvector:
+        index-type: HNSW
+        dimensions: 1536
+        distance-type: COSINE_DISTANCE
+        max-document-batch-size: 10000 # Optional: Maximum number of documents per batch
+    mcp:
+      client:
+#        sse远程调用mcp服务
+#        sse:
+#          connections:
+#            server1:
+#              url: http://localhost:8127
+#        stdio本地调用mcp服务
+        stdio:
+          servers-configuration: classpath:mcp-servers.json
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/yu-ai-agent
+#    username: root
+#    password: 20010518
   # Redis 配置
   # todo 需替换配置，然后取消注释
   data:
