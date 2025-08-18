@@ -93,10 +93,15 @@ class LoveAppTest {
 //        String answer =  loveApp.doChatWithMcp(message, chatId);
 //        System.out.println(answer);
 
+                // miniMax生成图片视频 MCP
+        String message = "五一劳动节来临之际，我打算拍一部纪录片记录劳动者的生活，请给我推荐相关视频素材,要具体链接";
+        String answer =  loveApp.doChatWithMcp(message, chatId);
+        System.out.println(answer);
+
         // 测试图片搜索 MCP
-        String message1 = "帮我搜索一些NBA球星欧文的照片";
-        String answer1 =  loveApp.doChatWithMcp(message1, chatId);
-        Assertions.assertNotNull(answer1);
+//        String message1 = "帮我搜索一些NBA球星欧文的照片";
+//        String answer1 =  loveApp.doChatWithMcp(message1, chatId);
+//        Assertions.assertNotNull(answer1);
     }
 
 
